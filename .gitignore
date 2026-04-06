@@ -1,0 +1,26 @@
+# Java and Maven
+/backend/target/
+*.class
+*.jar
+
+# Node
+/frontend/node_modules/
+npm-debug.log
+yarn.lock
+
+# OS files
+.DS_Store
+.Trash-
+
+# IDEs
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+
+# Logs
+*.log
+
+# Local env
+.env
