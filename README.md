@@ -1,14 +1,15 @@
-# Wholesale GST Billing System
-## Sugar · Atta · Oil · Rice
+# GST Billing & Inventory Management System
 
-A complete GST billing system built with Spring Boot, React, and H2 Database.
+A billing and stock-management application for a wholesale grocery business (sugar, atta, edible oil, rice). It generates GST-compliant invoices — automatically choosing CGST + SGST for intrastate sales and IGST for interstate sales from the customer's state code — deducts stock as invoices are raised, and produces GSTR-1 / GSTR-3B summaries for filing.
+
+**Stack:** Spring Boot 3 (Java 17, Spring Data JPA, H2, Lombok) · React · REST
 
 ---
 
 ## 🚀 Quick Start
 
 ### Requirements
-- Java 17+
+- Java 17+ (builds on 17 through 25)
 - Maven 3.6+
 - Node.js 18+
 
@@ -56,7 +57,7 @@ Frontend opens at: http://localhost:3000
 | Palm Oil          | 1511  | 5%  | LTR  |
 | Salt (Iodised)    | 2501  | 0%  | KG   |
 
-### Sample Customers:
+### Customers seeded on startup:
 - Ravi Kirana Store (AP — Intrastate → CGST+SGST)
 - Lakshmi General Stores (AP — Intrastate)
 - Sri Venkateshwara Traders (Telangana — Interstate → IGST)
@@ -93,13 +94,13 @@ Edit these files for your business:
 ## 📂 Project Structure
 
 ```
-wholesale-gst/
+GST-Billing-and-Inventory-Management-System/
 ├── backend/
 │   ├── pom.xml
 │   └── src/main/java/com/wholesale/gst/
 │       ├── GstApplication.java
 │       ├── model/          (Product, Customer, Invoice, InvoiceItem)
-│       ├── repository/     (JPA Repositories)
+│       ├── repository/     (Product, Customer, Invoice repositories)
 │       ├── service/        (InvoiceService — GST logic)
 │       ├── controller/     (REST APIs)
 │       └── config/         (DataLoader, WebConfig/CORS)
@@ -134,6 +135,3 @@ wholesale-gst/
 | GET | /api/reports/dashboard | This month summary |
 | GET | /api/reports/gst-summary?from=&to= | GST report |
 
----
-
-Built for daily wholesale business operations.
